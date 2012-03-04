@@ -14,9 +14,10 @@ public class LineItem {
     
     //setting product information and quanity discount associated with the
     //product using an array
-    private Product[] productData = {new Product(new NoDiscount(), "S632", "Mitsubishi Af2/3 Power Feeder", 110.00),
-        new Product(new QuanityDiscount(), "A058", "Mitsubishi .008 Upper Diamond Guide", 389.00),
-        new Product(new ChristmasDiscount(), "C101", "Charmilles .010 Upper/Lower Diamond Guide", 220.25)};
+    private Product[] productData = 
+        {new Product(new NoDiscount(), "S632",        "Mitsubishi Af2/3 Power Feeder            ", 110.00),
+         new Product(new QuanityDiscount(), "A058",   "Mitsubishi .008 Upper Diamond Guide      ", 389.00),
+         new Product(new ChristmasDiscount(), "C101", "Charmilles .010 Upper/Lower Diamond Guide", 220.25)};
 
     //constructor
     public LineItem(String productID, int quanity){
@@ -35,12 +36,16 @@ public class LineItem {
         return product;
     }
     
-    public String getLineItmeData(){
+    public String getLineItemData(){
         return (product.getProductID() + "   " + product.getDescription());
     }
     
-    public double detDiscountAmt(){
+    public double getDiscountAmt(){
         return(product.getDiscountAmount(quanity));
+    }
+    
+    public double getProductAmt(){
+        return(product.getUnitCost()*quanity);
     }
     
     /**

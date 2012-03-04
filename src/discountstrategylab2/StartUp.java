@@ -14,6 +14,12 @@ public class StartUp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CashRegister cr = new CashRegister();
+        
+        cr.startNewSale(1);
+        cr.addNewLineItem("S632", 6);
+        cr.addNewLineItem("A058", 2);
+        cr.addNewLineItem("C101", 1);
+        cr.showReceipt();
     }
 }
